@@ -12,8 +12,8 @@ export const requestAllPokemon = () => (dispatch) => (
 export const requestSinglePokemon = (id) => (dispatch) => (
   APIUtil.fetchSinglePokemon(id)
     .then(pokemon => {
-      dispatch(receiveSinglePokemon());
-      // return pokemon; //why is that?
+      dispatch(receiveSinglePokemon(pokemon));
+      return pokemon;
     })
 );
 
@@ -22,7 +22,6 @@ export const receiveAllPokemon = (pokemon) => ({
   pokemon
 });
 
-// Why is payload being passed?
 export const receiveSinglePokemon = (payload) => ({
   type: RECEIVE_SINGLE_POKEMON,
   payload

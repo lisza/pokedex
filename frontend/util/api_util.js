@@ -5,7 +5,6 @@ export const fetchAllPokemon = () => (
   })
 );
 
-// Where does the id come from?
 export const fetchSinglePokemon = (id) => (
   $.ajax({
     method: 'GET',
